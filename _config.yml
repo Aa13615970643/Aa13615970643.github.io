@@ -78,6 +78,8 @@ theme: hexo-theme-book
 deploy:
   type: git
   repo: git@github.com:Aa13615970643/Aa13615970643.github.io.git
+  branch: gh-pages
+
 markdown:
   render:
     html: true # Doesn't escape HTML content so the tags will appear as html.
