@@ -1,33 +1,33 @@
-* [Home](/hexo-theme-book-demo)
+* [Home](/)
 
 ## htme-and-css
-* [盒子和BFC](/hexo-theme-book-demo/html-and-css/盒子和BFC)
-* [css 中的常见布局](/hexo-theme-book-demo/html-and-css/css中的常见布局)
-* [css中的单位](/hexo-theme-book-demo/html-and-css/css中的单位)
-* [position的5个值](/hexo-theme-book-demo/html-and-css/position的5个值)
+* [盒子和BFC](/html-and-css/盒子和BFC)
+* [css 中的常见布局](/html-and-css/css中的常见布局)
+* [css中的单位](/html-and-css/css中的单位)
+* [position的5个值](/html-and-css/position的5个值)
 ## hexo-unit-test
 
-* [Categories](/hexo-theme-book-demo/test/hexo-unit-test/categories)
-* [Elements](/hexo-theme-book-demo/test/hexo-unit-test/elements)
-* [Excerpts](/hexo-theme-book-demo/test/hexo-unit-test/excerpts)
-* [Gallery Post](/hexo-theme-book-demo/test/hexo-unit-test/gallery-post)
-* [Hello World](/hexo-theme-book-demo/test/hexo-unit-test/hello-world)
-* [Images](/hexo-theme-book-demo/test/hexo-unit-test/images)
-* [Untitled](/hexo-theme-book-demo/test/hexo-unit-test/link-post-without-title)
-* [Link Post](/hexo-theme-book-demo/test/hexo-unit-test/link-post)
-* [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.](/hexo-theme-book-demo/test/hexo-unit-test/long-title)
-* [Untitled](/hexo-theme-book-demo/test/hexo-unit-test/no-title)
-* [Tag Plugins](/hexo-theme-book-demo/test/hexo-unit-test/tag-plugins)
-* [Tags](/hexo-theme-book-demo/test/hexo-unit-test/tags)
-* [Videos](/hexo-theme-book-demo/test/hexo-unit-test/videos)
-* [中文測試](/hexo-theme-book-demo/test/hexo-unit-test/中文測試)
-* [日本語テスト](/hexo-theme-book-demo/test/hexo-unit-test/日本語テスト)
+* [Categories](/test/hexo-unit-test/categories)
+* [Elements](/test/hexo-unit-test/elements)
+* [Excerpts](/test/hexo-unit-test/excerpts)
+* [Gallery Post](/test/hexo-unit-test/gallery-post)
+* [Hello World](/test/hexo-unit-test/hello-world)
+* [Images](/test/hexo-unit-test/images)
+* [Untitled](/test/hexo-unit-test/link-post-without-title)
+* [Link Post](/test/hexo-unit-test/link-post)
+* [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.](/test/hexo-unit-test/long-title)
+* [Untitled](/test/hexo-unit-test/no-title)
+* [Tag Plugins](/test/hexo-unit-test/tag-plugins)
+* [Tags](/test/hexo-unit-test/tags)
+* [Videos](/test/hexo-unit-test/videos)
+* [中文測試](/test/hexo-unit-test/中文測試)
+* [日本語テスト](/test/hexo-unit-test/日本語テスト)
 
 ## bugfix
 
-* [list test](/hexo-theme-book-demo/test/bugfix/list-test)
-* [blockquote position](/hexo-theme-book-demo/test/bugfix/blockquote-position)
-* [checkbox list](/hexo-theme-book-demo/test/bugfix/checkbox-list)
+* [list test](/test/bugfix/list-test)
+* [blockquote position](/test/bugfix/blockquote-position)
+* [checkbox list](/test/bugfix/checkbox-list)
 
 ## lots of post in submenu 
 
@@ -69,19 +69,19 @@
 
 # Demo
 
-* [Menu Realtime Demo](/hexo-theme-book-demo/demo/menu-realtime)
+* [Menu Realtime Demo](/demo/menu-realtime)
 
 ## Render
 
-* [markdown-it demo](/hexo-theme-book-demo/demo/render/markdown-it-demo)
-* [katex demo](/hexo-theme-book-demo/demo/render/katex-demo)
-* [footnotes demo](/hexo-theme-book-demo/demo/render/footnotes-demo)
-* [markdown-container](/hexo-theme-book-demo/demo/render/md-container)
+* [markdown-it demo](/demo/render/markdown-it-demo)
+* [katex demo](/demo/render/katex-demo)
+* [footnotes demo](/demo/render/footnotes-demo)
+* [markdown-container](/demo/render/md-container)
 
 ## Lorem Ipsum
 
-* [English](/hexo-theme-book-demo/demo/lorem-ipsum/en-demo)
-* [Japanese](/hexo-theme-book-demo/demo/lorem-ipsum/jp-demo)
-* [Korean](/hexo-theme-book-demo/demo/lorem-ipsum/kr-demo)
-* [Traditional Chinese](/hexo-theme-book-demo/demo/lorem-ipsum/tc-demo)
-* [Simplified Chinese](/hexo-theme-book-demo/demo/lorem-ipsum/sc-demo)
+* [English](/demo/lorem-ipsum/en-demo)
+* [Japanese](/demo/lorem-ipsum/jp-demo)
+* [Korean](/demo/lorem-ipsum/kr-demo)
+* [Traditional Chinese](/demo/lorem-ipsum/tc-demo)
+* [Simplified Chinese](/demo/lorem-ipsum/sc-demo)
