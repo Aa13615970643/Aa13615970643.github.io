@@ -11,7 +11,7 @@
 
     <title>
         
-          布局 - book-demo
+          布局 - zhy
         
     </title>
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="book-brand">
   <a href="/">
     <img src="/favicon.png">
-    <span>BOOK-DEMO</span>
+    <span>ZHY</span>
   </a>
 </div>
     <div id="menu" class="book-menu hide">
@@ -213,8 +213,8 @@ function sidebar_toggle() {
 </div>
 <style>
   .page{
-    width: 500px;
-    height: 500px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,8 +222,8 @@ function sidebar_toggle() {
   }
   .box{
     background-color: aqua;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 </style> 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .page&#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">    background-color: white;</span><br><span class="line">  &#125;</span><br><span class="line">  .box&#123;</span><br><span class="line">    background-color: aqua;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
@@ -232,18 +232,18 @@ function sidebar_toggle() {
 <h4 id="方法三-：-父向子绝，子元素所有定位为0，margin设置auto自适应。">方法三 ：  父向子绝，子元素所有定位为0，margin设置auto自适应。</h4>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .page&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .box&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="圣杯布局">圣杯布局</h1>
-<header>圣杯布局</header>
+<div class='header'>圣杯布局</div>
 <div class="home">
- <div class="main">主体dddddddddddddddddddddddddddddddddddddddddddddd</div>
+ <div class="main">主体ddddddddddddddddddddddddddddddddd</div>
  <div class="left">左边</div>
  <div class="right">右边</div>
 </div>
-<footer>底部</footer>
+<div class='footer'>底部</div>
 <style>
   body{
     min-width: 400px;
   }
-  header{
+  .header{
     background-color: blue;
   }
  .home{
@@ -271,22 +271,22 @@ function sidebar_toggle() {
    position: relative;
    left: 100px;
  }
- footer{
+ .footer{
    background-color: blue;
    clear: both;
  }
 </style>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;圣杯布局&lt;/header&gt;</span><br><span class="line">&lt;div class=&quot;home&quot;&gt;</span><br><span class="line"> &lt;div class=&quot;main&quot;&gt;主体&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;left&quot;&gt;左边&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;footer&gt;底部&lt;/footer&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">  body&#123;</span><br><span class="line">    min-width: 400px;</span><br><span class="line">  &#125;</span><br><span class="line">  header&#123;</span><br><span class="line">    background-color: blue;</span><br><span class="line">  &#125;</span><br><span class="line"> .home&#123;</span><br><span class="line">   background-color: white;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> .main&#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   background-color: rgb(241, 241, 241);</span><br><span class="line">   float: left;</span><br><span class="line"> &#125;</span><br><span class="line"> .left&#123;</span><br><span class="line">   width: 100px;</span><br><span class="line">   background-color: aqua;</span><br><span class="line">   float: left;</span><br><span class="line">   margin-left: -100%;</span><br><span class="line">   position: relative;</span><br><span class="line">   left: -100px;</span><br><span class="line"> &#125;</span><br><span class="line"> .right&#123;</span><br><span class="line">   float: left;</span><br><span class="line">   width: 100px;</span><br><span class="line">   margin-left: -100px;</span><br><span class="line">   background-color: rgb(137, 206, 81);</span><br><span class="line">   position: relative;</span><br><span class="line">   left: 100px;</span><br><span class="line"> &#125;</span><br><span class="line"> footer&#123;</span><br><span class="line">   background-color: blue;</span><br><span class="line">   clear: both;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="双飞翼布局">双飞翼布局</h1>
-<header>双飞翼布局</header>
+<div class='header'>双飞翼布局</div>
 <div class="home2">
  <div class="main2">
-    <div class="main-content2">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="main-content2">dddddddddddddddddddddddddddddddddd</div>
   </div>
  <div class="left2">左边</div>
  <div class="right2">右边</div>
 </div>
-<footer>底部</footer>
+<div class='footer'>底部</div>
 <style>
    footer{
    background-color: blue;
@@ -295,10 +295,10 @@ function sidebar_toggle() {
    .main-content2{
    margin: 0 100px;
  }
-  body{
+  .body{
     min-width: 400px;
   }
-  header{
+  .header{
     background-color: blue;
   }
  .home2{
@@ -354,7 +354,7 @@ function sidebar_toggle() {
       
         <figure
           class="avatar avatar-lg"
-          data-initial="k"
+          data-initial="z"
           style="background-color: #3b4351;">
         </figure>
       
@@ -362,7 +362,7 @@ function sidebar_toggle() {
 
     <!-- Author title -->
     <div class="author-title">
-      <div>kaiiiz</div>
+      <div>zhy</div>
       <div>2022-02-06</div>
     </div>
   </div>
