@@ -10,8 +10,8 @@ categories:
 </div>
 <style>
   .page{
-    width: 500px;
-    height: 500px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +19,8 @@ categories:
   }
   .box{
     background-color: aqua;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 </style> 
 
@@ -85,18 +85,18 @@ categories:
 
 
 # 圣杯布局
-<header>圣杯布局</header>
+<div class='header'>圣杯布局</div>
 <div class="home">
- <div class="main">主体dddddddddddddddddddddddddddddddddddddddddddddd</div>
+ <div class="main">主体ddddddddddddddddddddddddddddddddd</div>
  <div class="left">左边</div>
  <div class="right">右边</div>
 </div>
-<footer>底部</footer>
+<div class='footer'>底部</div>
 <style>
   body{
     min-width: 400px;
   }
-  header{
+  .header{
     background-color: blue;
   }
  .home{
@@ -124,7 +124,7 @@ categories:
    position: relative;
    left: 100px;
  }
- footer{
+ .footer{
    background-color: blue;
    clear: both;
  }
@@ -180,15 +180,15 @@ categories:
 
 
 # 双飞翼布局
-<header>双飞翼布局</header>
+<div class='header'>双飞翼布局</div>
 <div class="home2">
  <div class="main2">
-    <div class="main-content2">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="main-content2">dddddddddddddddddddddddddddddddddd</div>
   </div>
  <div class="left2">左边</div>
  <div class="right2">右边</div>
 </div>
-<footer>底部</footer>
+<div class='footer'>底部</div>
 <style>
    footer{
    background-color: blue;
@@ -197,10 +197,10 @@ categories:
    .main-content2{
    margin: 0 100px;
  }
-  body{
+  .body{
     min-width: 400px;
   }
-  header{
+  .header{
     background-color: blue;
   }
  .home2{
