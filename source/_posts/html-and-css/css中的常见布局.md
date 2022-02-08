@@ -87,7 +87,7 @@ categories:
 # 圣杯布局
 <div class='header'>圣杯布局</div>
 <div class="home">
- <div class="main">主体ddddddddddddddddddddddddddddddddd</div>
+ <div class="main">主体</div>
  <div class="left">左边</div>
  <div class="right">右边</div>
 </div>
@@ -183,7 +183,7 @@ categories:
 <div class='header'>双飞翼布局</div>
 <div class="home2">
  <div class="main2">
-    <div class="main-content2">dddddddddddddddddddddddddddddddddd</div>
+    <div class="main-content2">dd</div>
   </div>
  <div class="left2">左边</div>
  <div class="right2">右边</div>

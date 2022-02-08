@@ -5,8 +5,13 @@
 * [css 中的常见布局](/html-and-css/css中的常见布局)
 * [css中的单位](/html-and-css/css中的单位)
 * [position的5个值](/html-and-css/position的5个值)
-## hexo-unit-test
+* [h5和css3的新特性](/html-and-css/h5和css3的新特性)
+* [flex](/html-and-css/flex布局)
+## js手写篇
+* [apply,bind,call](/js手写篇/apply-bind-call)
+* [promise](/js手写篇/promise)
 
+## hexo-unit-test
 * [Categories](/test/hexo-unit-test/categories)
 * [Elements](/test/hexo-unit-test/elements)
 * [Excerpts](/test/hexo-unit-test/excerpts)
