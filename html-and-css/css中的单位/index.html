@@ -67,6 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/html-and-css/css%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E5%B8%83%E5%B1%80">css 中的常见布局</a></li>
 <li><a href="/html-and-css/css%E4%B8%AD%E7%9A%84%E5%8D%95%E4%BD%8D">css中的单位</a></li>
 <li><a href="/html-and-css/position%E7%9A%845%E4%B8%AA%E5%80%BC">position的5个值</a></li>
+<li><a href="/html-and-css/h5%E5%92%8Ccss3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7">h5和css3的新特性</a></li>
+<li><a href="/html-and-css/flex%E5%B8%83%E5%B1%80">flex</a></li>
+</ul>
+<h2 id="js手写篇">js手写篇</h2>
+<ul>
+<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/apply-bind-call">apply,bind,call</a></li>
+<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/promise">promise</a></li>
 </ul>
 <h2 id="hexo-unit-test">hexo-unit-test</h2>
 <ul>
@@ -207,6 +214,39 @@ function sidebar_toggle() {
         <div class="book-content">
           <div class="book-post">
   <h1 id="单位">单位</h1>
+<table>
+<thead>
+<tr>
+<th>css单位长度</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绝对长度</td>
+<td>px,pt,pc,cm,mm</td>
+</tr>
+<tr>
+<td>相对长度</td>
+<td>%,em,rem,vh,vw,vmax,vmin,em,ex,ch</td>
+</tr>
+</tbody>
+</table>
+<h2 id="px">px</h2>
+<p>px，表示像素，所谓像素就是呈现在我们显示器上的一个个小点，每个像素点都是大小等同的，所以像素为计量单位被分在了绝对长度单位中</p>
+<p>有些人会把px认为是相对长度，原因在于在移动端中存在设备像素比，px实际显示的大小是不确定的</p>
+<p>这里之所以认为px为绝对单位，在于px的大小和元素的其他属性无关</p>
+<h2 id="em">em</h2>
+<p>相对长度，相对于当前对象内字体尺寸，如果都没有设置就是相对于html的 font-size</p>
+<h2 id="rem">rem</h2>
+<p>相对于 html 的字体大小来，加上动态赋值font-size 能动态适应屏幕</p>
+<h2 id="vw-vh">vw vh</h2>
+<p>根据窗口的宽度（vw）高度（vh） 100等分 适合响应式</p>
+<p>#总结<br>
+px：绝对单位，页面按精确像素展示</p>
+<p>em：相对单位，基准点为父节点字体的大小，如果自身定义了font-size按自身来计算，整个页面内1em不是一个固定的值</p>
+<p>rem：相对单位，可理解为root em, 相对根节点html的字体大小来计算</p>
+<p>vh、vw：主要用于页面视口大小布局，在页面布局上更加方便简单</p>
 
 </div>
 

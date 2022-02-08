@@ -11,7 +11,7 @@
 
     <title>
         
-          日本語テスト - zhy
+          apply-bind-call - zhy
         
     </title>
 
@@ -213,16 +213,49 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <p>This is a Japanese test post.</p>
-<p>私は昨日ついにその助力家というのの上よりするたなけれ。</p>
-<p>最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。</p>
-<p>がたを知っないはずも同時に九月をいよいよたありた。</p>
-<p>もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。</p>
-<blockquote>
-<p>それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。</p>
-</blockquote>
-<p>この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。</p>
-<p><em>From <a target="_blank" rel="noopener" href="http://lipsum.sugutsukaeru.jp/index.cgi">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></em></p>
+  <h1 id="手写call">手写call</h1>
+<p>call() 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">   var foo =&#123;</span><br><span class="line">     value:&#x27;我是傻逼&#x27;</span><br><span class="line">   &#125;</span><br><span class="line">   function bar()&#123;</span><br><span class="line">     console.log(this.value)</span><br><span class="line">   &#125;</span><br><span class="line">   bar.call(foo)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>上面函数bar改变this 指向 指向的是对象foo<br>
+上面页可以写成这种形式</p>
+<h2 id="第一次模拟call">第一次模拟call</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var foo=&#123;</span><br><span class="line">    value:&quot;我是傻逼&quot;,</span><br><span class="line">    bar:function()&#123;</span><br><span class="line">      console.log(this.value)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  foo.bar()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这样的话this指向的就是foo对象<br>
+但是直接在对象里面添加一个方法明显是不行的</p>
+<h2 id="第二次模拟-call">第二次模拟 call</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var foo=&#123;</span><br><span class="line">  value:&#x27;你看我像傻子吗&#x27;  </span><br><span class="line">&#125;</span><br><span class="line">Function.prototype.call2 = function(val)&#123;</span><br><span class="line">    val.fn = this</span><br><span class="line">    val.fn()</span><br><span class="line">    delete val.fn</span><br><span class="line">&#125;</span><br><span class="line">function bar()&#123;</span><br><span class="line">  console.log(this.value)</span><br><span class="line">&#125;</span><br><span class="line">bar.call2(foo)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这样我们在函数的原型对象上定义了一个方法call2方法中的this指向的是调用它的函数bar ，把this的值也就是bar函数赋值给传入的对象的一个方法，因此我们就改变了this的指向然后执行call.fn 然后 再删除，这样就实现了改变this的指向<br>
+但是这样远远不够<br>
+call 函数还能给定参数执行函数</p>
+<h2 id="第三次模拟">第三次模拟</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   let foo =&#123;</span><br><span class="line">     value:&quot;我看你像傻逼&quot;</span><br><span class="line">   &#125;</span><br><span class="line"> Function.prototype.call2 = function(val)&#123;</span><br><span class="line">   let args = [...arguments].slice(1)</span><br><span class="line">    val.fn = this</span><br><span class="line">   return val.fn(...args)</span><br><span class="line">&#125;</span><br><span class="line">function bar(name,content)&#123;</span><br><span class="line">  console.log(this.value)</span><br><span class="line">  console.log(`$&#123;name&#125;:$&#123;content&#125;?`)</span><br><span class="line">&#125;</span><br><span class="line"> bar.call2(foo,&#x27;我&#x27;,&#x27;难道你不是傻逼吗&#x27;,)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这样就可以传参了,我用es6中的拓展语法简化了操作这样就完成了80%<br>
+接下来完善其他功能</p>
+<h2 id="第四次模拟">第四次模拟</h2>
+<script>
+   let value='jjjj'
+   let foo ={
+     value:"我看你像傻逼"
+   }
+ Function.prototype.call2 = function(val){
+     var val = val||window;
+     val.fn = this
+     let args = [...arguments].slice(1)
+     let result = val.fn(...args)
+     delete val.fn
+     return result
+}
+function bar(name,content){
+  console.log(this.value)
+  console.log(`${name}:${content}?`)
+}
+bar.call2(null)
+</script>
+<p>如果为空this 指向window</p>
+<h1 id="call-和apply-bind的区别">call 和apply bind的区别</h1>
+<p>call 接收参数形式是列表参数<br>
+apply 接收参数形式是数组 函数立即执行<br>
+bind 传的参数和apply 一样但是它会返回一个函数 要手动执行</p>
 
 </div>
 
@@ -262,10 +295,19 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>zhy</div>
-      <div>2013-12-24</div>
+      <div>2022-02-08</div>
     </div>
   </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      <a class="category-link" href="/categories/js-%E6%89%8B%E5%86%99%E7%AF%87/">js 手写篇</a>
+
+      
+    </div>
+    
   
 
   <div class="divider"></div>
