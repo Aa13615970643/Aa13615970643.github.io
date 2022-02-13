@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0%E9%99%A4%E8%AF%A5%E6%9F%A5">js内存泄露的情况</a></li>
 <li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0%E9%99%A4%E8%AF%A5%E6%9F%A5">对函数编程的理解，和它的优缺点</a></li>
 <li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">防抖和节流</a></li>
+<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E7%90%86%E8%A7%A3">防抖和节流</a></li>
 </ul>
 <h2 id="hexo-unit-test">hexo-unit-test</h2>
 <ul>
@@ -224,8 +225,18 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="深浅拷贝定义">深浅拷贝定义</h1>
-<p>浅拷贝是引用 深拷贝是重新开一个堆内存</p>
+  <h1 id="浅拷贝">浅拷贝</h1>
+<p>定义:‘它复制的只是表面的一层,对象里面再有对象就复制不了而是改变内存地址’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   const zhy = &#123;</span><br><span class="line">     name:&quot;zhy&quot;,</span><br><span class="line">     age:&#x27;24&#x27;,</span><br><span class="line">     content:&#x27;真帅&#x27;</span><br><span class="line">   &#125;</span><br><span class="line">   /* 方法一  最简单直接解构*/</span><br><span class="line">   const zhy2 =&#123;...zhy&#125;</span><br><span class="line">   zhy2.age = &#x27;25&#x27;</span><br><span class="line">   console.log(zhy)  </span><br><span class="line">   /* 方法二 for 循环 */</span><br><span class="line">   const zhy3 =&#123;&#125;</span><br><span class="line">   for (const key in zhy) &#123;</span><br><span class="line">      zhy3[key]=zhy[key]</span><br><span class="line">   &#125;</span><br><span class="line">   zhy3.age = &#x27;25&#x27;</span><br><span class="line">   console.log(zhy)</span><br><span class="line">   /* 使用对象方法 assign:把2个对象合并成一个对象 */</span><br><span class="line">   const zhy4 = Object.assign(&#123;&#125;,zhy)</span><br><span class="line">    zhy4.age = &#x27;25&#x27;</span><br><span class="line">   console.log(zhy)</span><br><span class="line"> </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>总结:‘各有各的优缺点结合实际业务选择最合适的方法’</p>
+<h1 id="深拷贝">深拷贝</h1>
+<p>定义:浅拷贝只能改变表面一层的，如果说对象里面有数组或者说是对象的话，用上面的方法就没有全部赋值成功<br>
+所以深拷贝就很有必要,实现原理主要就是递归</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   const obj =&#123;</span><br><span class="line">     name:&#x27;zhy&#x27;,</span><br><span class="line">     city:&#123;</span><br><span class="line">       first:&#x27;帝景苑&#x27;,</span><br><span class="line">       two:&#x27;恒禾七尚&#x27;</span><br><span class="line">     &#125;,</span><br><span class="line">     content:&quot;钻石王老五&quot;,</span><br><span class="line">     wife:[&#x27;美女&#x27;,&#x27;富婆&#x27;]</span><br><span class="line">   &#125;</span><br><span class="line">   function life (obj)&#123;</span><br><span class="line">     const zhy2 = obj instanceof Object?&#123;&#125;:[]</span><br><span class="line">     for (const key of Object.ownKeys(obj)) &#123;</span><br><span class="line">          zhy2[key] = typeof obj[key] == &#x27;object&#x27;? life(obj[key]):obj[key]</span><br><span class="line">     &#125;</span><br><span class="line">     return zhy2</span><br><span class="line">   &#125;</span><br><span class="line">   const zhy2 = life(obj)</span><br><span class="line">   zhy2.wife[0] = &#x27;丑女&#x27;</span><br><span class="line">   zhy2.city.two =&#x27;城中村&#x27;</span><br><span class="line">   console.log(obj)</span><br><span class="line">   console.log(zhy2)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这就是深拷贝也太简单了</p>
+<h1 id="总结">总结</h1>
+<p>上面只是简单的实现了功能 但是对象里面还可能会有对象 symbol（Object.ownKeys） 正则 日期 map set 环引用（weakmap）等（这种直接引用写好的库）<br>
+简单的 深拷贝值用 json 转</p>
 
 </div>
 
