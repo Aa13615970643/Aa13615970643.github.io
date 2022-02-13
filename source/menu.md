@@ -21,7 +21,7 @@
 * [js内存泄露的情况](/js手写篇/数组增删除该查)
 * [对函数编程的理解，和它的优缺点](/js手写篇/数组增删除该查)
 * [防抖和节流](/js手写篇/防抖和节流)
-
+* [防抖和节流](/js手写篇/堆和栈的理解)
 
 ## hexo-unit-test
 * [Categories](/test/hexo-unit-test/categories)
