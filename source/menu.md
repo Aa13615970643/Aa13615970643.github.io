@@ -12,16 +12,15 @@
 * [画图](/html-and-css/画图)
 * [单行多行文字溢出省略](/html-and-css/单行多行文字溢出省略)
 ## js
-* [apply,bind,call](/js手写篇/apply-bind-call)
-* [promise](/js手写篇/promise)
-* [数组的增删改查](/js手写篇/数组增删除该查)
-* [手写深拷贝](/js手写篇/手写深拷贝)
-* [闭包](/js手写篇/闭包)
-* [js上下文和执行栈](/js手写篇/js上下文和执行栈)
-* [js内存泄露的情况](/js手写篇/数组增删除该查)
-* [对函数编程的理解，和它的优缺点](/js手写篇/数组增删除该查)
-* [防抖和节流](/js手写篇/防抖和节流)
-* [防抖和节流](/js手写篇/堆和栈的理解)
+* [apply,bind,call](/js/apply-bind-call)
+* [promise](/js/promise)
+* [数组的增加删改查](/js/数组的增加删改查)
+* [手写深拷贝](/js/手写深拷贝)
+* [闭包](/js/闭包)
+* [js上下文和执行栈](/js/jsbb)
+* [防抖和节流](/js/防抖和节流)
+* [es6](/js/es6)
+
 
 ## hexo-unit-test
 * [Categories](/test/hexo-unit-test/categories)
