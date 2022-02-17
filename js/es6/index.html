@@ -76,16 +76,14 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="js">js</h2>
 <ul>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/apply-bind-call">apply,bind,call</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/promise">promise</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0%E9%99%A4%E8%AF%A5%E6%9F%A5">数组的增删改查</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%89%8B%E5%86%99%E6%B7%B1%E6%8B%B7%E8%B4%9D">手写深拷贝</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E9%97%AD%E5%8C%85">闭包</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/js%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E6%A0%88">js上下文和执行栈</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0%E9%99%A4%E8%AF%A5%E6%9F%A5">js内存泄露的情况</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0%E9%99%A4%E8%AF%A5%E6%9F%A5">对函数编程的理解，和它的优缺点</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">防抖和节流</a></li>
-<li><a href="/js%E6%89%8B%E5%86%99%E7%AF%87/%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E7%90%86%E8%A7%A3">防抖和节流</a></li>
+<li><a href="/js/apply-bind-call">apply,bind,call</a></li>
+<li><a href="/js/promise">promise</a></li>
+<li><a href="/js/%E6%95%B0%E7%BB%84%E7%9A%84%E5%A2%9E%E5%8A%A0%E5%88%A0%E6%94%B9%E6%9F%A5">数组的增加删改查</a></li>
+<li><a href="/js/%E6%89%8B%E5%86%99%E6%B7%B1%E6%8B%B7%E8%B4%9D">手写深拷贝</a></li>
+<li><a href="/js/%E9%97%AD%E5%8C%85">闭包</a></li>
+<li><a href="/js/jsbb">js上下文和执行栈</a></li>
+<li><a href="/js/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">防抖和节流</a></li>
+<li><a href="/js/es6">es6</a></li>
 </ul>
 <h2 id="hexo-unit-test">hexo-unit-test</h2>
 <ul>
@@ -225,12 +223,77 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="防抖">防抖</h1>
-<p>定义:高频触发事件 n 秒只执行一次，<code>如果n秒内高频事件再次被触发，则重新计算事件,运用到闭包保存状态</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function debounce(fn,wait)&#123;</span><br><span class="line">      let timeout = null</span><br><span class="line">       return function() &#123;</span><br><span class="line">       if (timeout == null) &#123;</span><br><span class="line">        clearTimeout(timeout);</span><br><span class="line">        timeout = setTimeout(fn,wait)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="节流">节流</h1>
-<p>定义: 高频事件触发 n 秒内只执行一次</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   function throttle(fn,wait)&#123;</span><br><span class="line">     let timeout = true</span><br><span class="line">     return function()&#123;</span><br><span class="line">       if (!timeout) &#123;</span><br><span class="line">          return</span><br><span class="line">       &#125;</span><br><span class="line">       timeout  = false</span><br><span class="line">       setTimeout(()=&gt;&#123;</span><br><span class="line">         fn()</span><br><span class="line">         timeout = true</span><br><span class="line">       &#125;,wait)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+  <h1 id="箭头函数">箭头函数</h1>
+<p>定义: 没有对象原型 ，箭头函数不绑定this，会捕获其所在的上下文的this值，作为自己的this值（所以this指向不是调用它的人，而是用调用它的人的this） , 写法简洁</p>
+<h1 id="set">set</h1>
+<p>定义:'可以存储任何类型的为一值’相对于数组它的速度更快用于性能优化</p>
+<h2 id="1-增">1.增</h2>
+<script>
+    const add = new Set();
+    add.add('value')
+</script>
+<h2 id="2-删除">2.删除</h2>
+<p>1.删除指定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   const setDelete = new Set([1,2,3,4,5,6]);</span><br><span class="line">   setDelete.delete(1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>2.删除全部</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   const setClear = new Set([1,2,3,4,5,6]);</span><br><span class="line">   setClear.clear()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-查询">3.查询</h2>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   const setHas = new Set([1,2,3,4,5,6]);</span><br><span class="line">   setHas.has(1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-遍历方法">4.遍历方法</h2>
+  <script>
+    const set= new Set(['fsdfs',['sdds','dfafds'],3,4,5,6]);
+    set.add('ss')
+/*     set.forEach((value,set)=>{
+      console.log(value)
+      console.log(set)
+    }) */
+    console.log(set)
+    var ii = set.values()
+    console.log(ii)
+    console.log(ii.next().value)
+    console.log(ii.next().value)
+    console.log(ii.next().value)
+    console.log(ii.next().value)
+    console.log(ii.next().value)
+    console.log(ii.next().value)
+    /* 返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值的[value, value]数组。为了使这个方法和Map对象保持相似， 每个值的键和值相等。 */
+     console.log(set.values())
+     /* 与values()方法相同，返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值。 */
+   const oo = [1,1,1,5,5,5]
+   console.dir(oo)
+ </script>
+<p>迭代器对象 next()就可以访问到值了(按顺序手动取值,取一个迭代对象少一个)</p>
+<h1 id="weakset">weakset</h1>
+<p>区别:‘它是弱引用类型只能用add 引用类型添加 ,方法和set差不多 遍历方法不能用’<br>
+用途:‘主要用来保存对象’<br>
+弱引用：‘当对象被引用的时候这个对象就会被标记1 又被别的引用的时候+1 ,但是被弱引用的时候不会加一所以当对象没有被引用了正常来说就报错了但是weakset看着有但实际没有,过段时间就自己清楚了’<br>
+我的理解:‘普通的要依靠垃圾回收机制算法回收，weakset只能用引用对象他会自己回收’</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const bb = new WeakSet()</span><br><span class="line">  bb.add(&#123;name:&#x27;55&#x27;&#125;)</span><br><span class="line">  console.log(bb)</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(bb)</span><br><span class="line">  &#125;, 10000);</span><br><span class="line">  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="迭代器和生成器">迭代器和生成器</h1>
+<h2 id="内置可迭代对象">内置可迭代对象</h2>
+<p>String、Array、TypedArray、Map 和 Set 都是内置可迭代对象，因为它们的原型对象都拥有一个 Symbol.iterator 方法。用了之后可以返回一个<br>
+迭代器对象就可以用next()</p>
+<h2 id="生成器">生成器</h2>
+<p>函数加*<br>
+变量加yield<br>
+async 就是生成器的语法糖</p>
+<h1 id="class-修饰器">class 修饰器@</h1>
+<p>其实就是混入</p>
+<h1 id="解构赋值">解构赋值</h1>
+<h1 id="let-const">let const</h1>
+<h1 id="proxy">proxy</h1>
+<p>对对象get 和 set</p>
+<p>#symbol 唯一值</p>
+<h1 id="promise">promise</h1>
+<h1 id="class">class</h1>
+<h1 id="添加了一些类型的方法">添加了一些类型的方法</h1>
+<p>数组from 可迭代对象 为数组 转数组<br>
+Array.of<br>
+方法用于将一组值，转换为数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Array.of(3, 11, 8) // [3,11,8]</span><br><span class="line">Array.of(3) // [3]</span><br><span class="line">Array.of(3).length // 1</span><br></pre></td></tr></table></figure>
+<p>includes() 查找有true<br>
+find 查找 返回回调有值<br>
+对象 assgin 对象合并 浅拷贝</p>
 
 </div>
 
