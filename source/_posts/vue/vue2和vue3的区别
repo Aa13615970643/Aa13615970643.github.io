@@ -1,0 +1,14 @@
+# vue3
+响应式区别 ref 和 reactive
+一个用于基础数值 ref 返回响应式对象
+reactive 用于对象返回 响应式对象
+建议直接 ref 梭哈
+
+toref 和 torefs
+和上面的区别是对象的延续
+toref 是在响应对象上的属性分离出一个ref
+torefs 是把响应式对象转为普通 每个都加上ref
+相同 子改变 原对象改变
+一把梭哈torefs 可以解构赋值
+
+总结ref 关联视图 toref 关联数据 
