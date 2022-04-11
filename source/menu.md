@@ -28,6 +28,9 @@
 * [for 和 if](/vue/for-if)
 * [mvvm](/vue/mvvm)
 
+## 踩坑
+* [微信小程序](/踩坑/微信小程序)
+* [uniapp踩坑](/踩坑/uniapp踩坑)
 
 
 ## hexo-unit-test
